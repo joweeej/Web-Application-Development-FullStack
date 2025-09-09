@@ -1,28 +1,25 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/S3-2Sk2B)
-## Course: Web App. Dev. | Apr-Jul 25 | BBIT 2102 (SU-SCES)
+# 🍴 Kitchen Website – Input Validation Project
 
-## The Adventurer (Me)
+This project is a **kitchen-themed website** built to practice and demonstrate **form validation, input handling, and dynamic interactions** using **HTML, CSS, JavaScript, and PHP**.  
 
-<h1 align="center">Joy Toromo</h1>
-<table>
-  <tbody>
-    <tr>
-      <td><b>Information</b></td>
-      <td width="50%" rowspan="4">
-        <img width = "50%" alt="Photo" src="assets/me.jpg" />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <ul>
-          <li>Jojo</li>
-          <li>176855</li>
-          <li>joy.toromo@strathmore.edu</li>
-          <li>D</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+The goal of the project is to provide a smooth user experience while ensuring that all data entered by users is properly validated both on the client-side (JavaScript) and server-side (PHP).
 
-> "Not all who wander are lost" _J.R.R Tolkien_
+---
+
+## 🚀 Features
+- Interactive web pages styled with **HTML5 & CSS3**
+- **Client-side validation** with JavaScript (real-time error messages, required field checks, etc.)
+- **Server-side validation** with PHP for secure handling of user input
+- Modular code structure for easy updates
+- Simple and responsive layout
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** PHP  
+- **Validation:** JavaScript (client-side) + PHP (server-side)
+
+---
+
+## 📂 Project Structure

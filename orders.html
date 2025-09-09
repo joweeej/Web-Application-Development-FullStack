@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Orders </title>
+        <!-- @todo : add the resti.e favicons -->
+    </head>
+
+
+<body>
+   <h1> Place your order </h1>
+   <form action = "#" method = ""> 
+       <div> <!--division element (grouping related elements; text)-->
+        <!-- for is used to show the related input that this elemnt belongs to-->
+        <label for="Customer_name">Customer Name</label>
+        <input type = "text" id = "cname" name = "cname">
+       </div>
+       <div>
+        <label for = "phone">Phone Number</label>
+        <input type = "number" id = "phone" name = "phone">
+       </div>
+       <div>
+        <label for = "email">Email Address</label>
+        <input type = "email" id = "email" name = "email">
+       </div>
+       <div>
+          <label for ="food"> Food Item(s)</label>
+          <input type = "checkbox" name="food" id="Chapo" value="Chapo">Chapo
+          <input type = "checkbox" name="food" id="Ugali" value="Ugali">Ugali
+          <input type = "checkbox" name="food" id="Rice" value="Rice">Rice
+          <input type = "checkbox" name="food" id="Beans" value="Beans">Beans
+          <input type = "checkbox" name="food" id="Beef" value="Beef">Beef
+          <input type = "checkbox" name="food" id="Ndengu" value="Ndengu">Ndengu
+       </div>
+       <div>
+        <label for="prefs"> Preferences </label>
+        <textarea  id="prefs" name="prefs"> </textarea>
+       </div>
+       <div>
+        <label for="mode">Mode of Payment</label>
+        <input type="radio" name="node" id="mmoney" value="mmoney"> Mobile Money
+        <input type="radio" name="mode" id="mmoney" value="card"> Card
+        <input type="radio" name="mode" id="mmoney" value="cash"> Cash
+       </div>
+       <div>
+        <label for="town"> Town </label>
+        <select id="town" name="towm">
+            <option value="">--please select--</option>
+            <option value="nrb">Nairobi</option>
+            <option value="msa">Mombasa</option>
+       </div>
+    <input type="submit" value="Place Order">
+   </form>
+</body>
+</html> 

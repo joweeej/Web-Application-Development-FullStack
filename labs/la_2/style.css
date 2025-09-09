@@ -1,0 +1,318 @@
+/* VARIABLES: Purple & Pink Theme */
+:root {
+  --deep-purple: #4b0082;
+  --soft-purple: #9b59b6;
+  --lavender: #e6ccff;
+  --light-pink: #ffe6f0;
+  --hot-pink: #ff69b4;
+  --blush: #fff0f5;
+  --white: #ffffff;
+  --dark-text: #2e003e;
+  --accent-pink: #ff85b3;
+  --cream-bg: #fff9f4;
+  --button-bg: #c56cf0;
+  --hover-bg: #ffe1f0;
+}
+
+/* GENERAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE BODY */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fff0f6;
+  color: var(--dark-text);
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-top: 30px;
+  color: var(--deep-purple);
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--soft-purple);
+}
+
+h2 {
+  color: var(--hot-pink);
+}
+
+/* PARAGRAPH */
+p {
+  font-size: 18px;
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* NAVIGATION BAR */
+/*type+class selector(combined- selector); nav - targets all <nav> elements; that have the class main-nav*/
+nav.main-nav {
+  background-color: var(--deep-purple);
+  padding: 1px 0;
+  min-height: 0;
+  
+}
+
+ul.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+li.nav-item a {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  padding: 1px 16px;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+li.nav-item a:hover {
+  background-color: var(--accent-pink);
+  color: var(--dark-text);
+}
+
+/* BANNER IMAGE */
+#banner {
+  width: 90%;
+  margin: 25px auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* UNORDERED + ORDERED LISTS */
+ul, ol {
+  max-width: 800px;
+  margin: 20px auto;
+  padding-left: 40px;
+  font-size: 18px;
+}
+
+/* TABLE STYLING */
+table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--light-pink);
+}
+
+th, td {
+  border: 1px solid var(--hot-pink);
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--accent-pink);
+  color: var(--white);
+}
+
+td {
+  background-color: var(--white);
+}
+
+/* FORM STYLING */
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: var(--lavender);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--deep-purple);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid var(--accent-pink);
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  /*transition usually specifies what CSS property to animate*/
+  transition: border-color 0.3s ease;/*ease is a timing function that starts the animation slowly, speeds up in the middle and then slows down at the end*/
+}
+
+input[type="text"]:focus,/*focus is a pseudo-class in CSS - when the  user is currently focused on this input field*/
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--hot-pink);
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--hot-pink);
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--deep-purple);
+  color: white;
+  text-align: center;
+  padding: 1.3px 0;/*short-haand for padding-top, left right, bottom*/
+  margin-top: 40px;
+  min-height: 0;
+}
+
+footer a {
+  color: var(--accent-pink);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* GALLERY SECTION */
+.gallery-grid {
+  display: grid;
+  /*Each column will be At least 220px wide , At most 1fr - they will share the available space evenly*/
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));/*tells the grid to automatically insert as many columns that will fit in the container*/
+  gap: 20px;
+  padding: 40px;
+  background: var(--blush);
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;/*hides anything that spills outside the boundaries of this element.*/
+  transition: transform 0.5s;
+}
+
+.gallery-item img {
+  width: 100%;/*of its parent element*/
+  height: 200px;
+  object-fit: cover;/* fiills its container while maintaining its aspect ratio */
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);/*slightly grows in size when the user hovers over it - Scales to 105% of original size*/
+}
+
+/* PRODUCT GRID LAYOUT */
+#product-grid {
+  display: grid;/*turns the grid element into a grid container*/
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 0 15px;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  /*Horizontal offset, Vertical Offset Blur Radius*/
+  box-shadow: 0 4px 10px rgba(123, 68, 141, 0.1);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);/*moves this element upwards by 6 pixels along the vertical axis - its a negative value*/
+  border-color: var(--hot-pink);
+  box-shadow: 0 10px 20px rgba(123, 68, 141, 0.2);/*Alpha - the shadow is very transparent(0.2 - 20%)*/
+}
+
+.product-card img.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product-info {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dark-text);
+}
+
+.price-tag {
+  display: inline-block;
+  background-color: #ffcce6;
+  color: #5e184c;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* BUTTON  */
+button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hot-pink);
+}
+
+/* For smaller devices, tablets and mobile phones that have screens which are 768px wide or smaller */
+@media (max-width: 768px) {
+  ul.nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table, th, td {
+    font-size: 14px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+}

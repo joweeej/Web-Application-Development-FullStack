@@ -1,0 +1,170 @@
+<!DOCTYPE html> <!--DTD-->
+<!--root element-->
+<html>
+    <!--a description of the page(metadata)-->
+ <head>
+    <title>Tandoori - Utaipenda</title>
+ 
+    <meta name="description" content="a bas">
+    <meta name="keywords" content="cake,bread,cookies">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+     <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <!-- linking the external css file-->
+    <link rel="stylesheet" href="css/style.css">
+ </head>
+ <!--it contains the page content-->
+ <body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="index1.html">Home</a></li>
+      <li class="nav-item"><a href="index1.html#offers">Special Offers</a></li>
+      <li class="nav-item"><a href="index1.html#best">Best Sellers</a></li>
+      <li class="nav-item"><a href="index1.html#featured-products">Featured</a></li>
+      <li class="nav-item"><a href="index1.html#gallery">Gallery</a></li>
+      <li class="nav-item active"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+ 
+  <main class="container">
+    <h1>& Contact Us & </h1>
+    <p id="form-paragraph">
+      Fill out our contact form.
+    </p>
+ 
+    <div class="form-section">
+      <h2>  Food Order Form </h2>
+      <form action="php/script.php" method="POST" id="contactForm">
+        <div class="form-group">
+          <label for="cname">Customer Name <span>*</span></label>
+          <input class="a b c" type="text" id="cname" name="cname" required>
+          <div class="error-message" id="nameError">Please enter your name</div>
+        </div>
+ 
+        <div class="form-group">
+          <label for="phone">Phone Number <span>*</span></label>
+          <input type="tel" id="phone" name="phone" required>
+          <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+        </div>
+ 
+        <div class="form-group">
+          <label for="email">Email Address <span>*</span></label>
+          <input type="email" id="email" name="email" required>
+          <div class="error-message" id="emailError">Please enter a valid email address</div>
+        </div>
+ 
+        <div class="form-group">
+          <label for="food">Food Item(s) <span>*</span></label>
+          <div id="food-items">
+            <div class="food-item">
+              <!-- setting the name attriibute to food will only submit the last food item selected; food[] will select all food items -->
+              <label><input type="checkbox" name="food[]" id="Chapo" value="Chapo" onmouseover="dummy()" onchange="toggleServings('Chapo')">
+                Chapo (KSh 20)</label>
+              <div id="Chapo-servings" class="servings-input">
+                <label for="Chapo-qty">Servings:</label>
+                <input onKeyDown="preventTyping()" type="number" class="servings-input-quantity" id="Chapo-qty"
+                  name="Chapo-qty" min="1" max="20" value="1">
+              </div>
+            </div>
+            <div class="food-item">
+              <label><input type="checkbox" name="food[]" id="Ugali" value="Ugali" onchange="toggleServings('Ugali')">
+                Ugali (KSh 15)</label>
+              <div id="Ugali-servings" class="servings-input">
+                              <label for=" Ugali-qty">Servings:</label>
+                <input type="number" class="servings-input-quantity" id="Ugali-qty" name="Ugali-qty" min="1" max="20"
+                  value="1">
+              </div>
+            </div>
+            <div class="food-item">
+              <label><input type="checkbox" name="food[]" id="Rice" value="Rice" onchange="toggleServings('Rice')"> Rice
+                (KSh 25)</label>
+              <div id="Rice-servings" class="servings-input">
+                <label for="Rice-qty">Servings:</label>
+                <input type="number" class="servings-input-quantity" id="Rice-qty" name="Rice-qty" min="1" max="20"
+                  value="1">
+              </div>
+            </div>
+            <div class="food-item">
+              <label><input type="checkbox" name="food[]" id="Beans" value="Beans" onchange="toggleServings('Beans')">
+                Beans (KSh 30)</label>
+              <div id="Beans-servings" class="servings-input">
+                <label for="Beans-qty">Servings:</label>
+                <input type="number" class="servings-input-quantity" id="Beans-qty" name="Beans-qty" min="1" max="20"
+                  value="1">
+              </div>
+            </div>
+            <div class="food-item">
+              <label><input type="checkbox" name="food[]" id="Ndengu" value="Ndengu" onchange="toggleServings('Ndengu')">
+                Ndengu (KSh 35)</label>
+              <div id="Ndengu-servings" class="servings-input">
+                <label for="Ndengu-qty">Servings:</label>
+                <input type="number" class="servings-input-quantity" id="Ndengu-qty" name="Ndengu-qty" min="1" max="20"
+                  value="1">
+              </div>
+            </div>
+            <div class="food-item">
+              <label><input type="checkbox" name="food[]" id="Beef" value="Beef" onchange="toggleServings('Beef')"> Beef
+                (KSh 150)</label>
+              <div id="Beef-servings" class="servings-input">
+                <label for="Beef-qty">Servings:</label>
+                <input type="number" class="servings-input-quantity" id="Beef-qty" name="Beef-qty" min="1" max="10"
+                  value="1">
+              </div>
+            </div>
+          </div>
+          <div class="error-message" id="foodError">Please select at least one food item</div>
+          <div id="orderTotal">
+            <strong>Order Total: KSh <span id="totalAmount">0</span></strong>
+          </div>
+        </div>
+ 
+        <div class="form-group">
+          <label for="prefs">Preferences</label>
+          <textarea id="prefs" name="prefs" rows="3"
+            placeholder="Any special requests or dietary requirements..."></textarea>
+        </div>
+ 
+        <div class="form-group">
+          <label for="mode">Mode of Payment  <span>*</span></label>
+          <div class="payment-options">
+            <label><input type="radio" name="mode" data-text="Mobile Money" id="mmoney" value="mmoney" required> Mobile
+              Money</label>
+            <label><input type="radio" name="mode" data-text="Card" id="card" value="card" required> Card</label>
+            <label><input type="radio" name="mode" data-text="Cash" id="cash" value="cash" required> Cash</label>
+          </div>
+          <div class="error-message" id="modeError">Please select a payment method</div>
+        </div>
+ 
+        <div class="form-group">
+          <label for="town">Town <span>*</span></label>
+          <select id="town" name="town" required>
+            <option value=""> -- Please Select -- </option>
+            <option value="nrb">Nairobi</option>
+            <option value="msa">Mombasa</option>
+          </select>
+          <div class="error-message" id="townError">Please select your town</div>
+        </div>
+ 
+        <input id="submitForm" type="submit" value=" Place Order">
+        <button type="button" onclick="clearForm()"> Clear Form</button>
+      </form>
+    </div>
+  </main>
+ 
+   
+     <!--a footer(bottom of the page)-->
+     <!-- @TODO : bugfix - footer styles affecting sections -->
+     <footer>
+      <p>
+        <a href="https://www.instagram.com/the_bakers_club/" target=blank>
+          The Bakers Club
+        </a>
+      </p>
+     </footer>
+    <script src="js/script.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <!--This line loads SweetAlert2 from the jsDelivr CDN so I don’t have to download or install anything manually.-->
+
+    </body>
+</html>
+ 

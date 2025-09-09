@@ -1,0 +1,357 @@
+/*html html{}*/
+:root{
+  
+        --dark-brown: #5E4433;
+        --medium-gray: #9E9D9B;
+        --warm-beige: #B6A389;
+        --soft-yellow: #F5DFA3;
+        --light-gray: #D1D2D4;
+        --accent-yellow: #EFBA4D;
+        --cream: #fffaf2;
+        --text-dark: #3b302a;
+}
+body{
+  font-family: 'Lato', sans-serif;/*when using a customized font always have a fall-back font*/
+  background-color: var(--cream);
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+h1,h2,h3,h4,h5,h6/*Group Selector*/{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+h1{
+  text-align: center;/*Whaterver is last makes the final change*/
+  color: var(--dark-brown);
+}
+
+/*-----------Nav Styles---------*/
+nav.main-nav{
+  background-color: var(--dark-brown);
+  padding: 10px 0;/*shorthand*/
+  /*padding: 10px 4px 5px 3px -Shorthand TReBLe*/
+  padding-top: 4px;/*different value*/
+  padding-bottom: 4px;
+  padding-left: 0;
+  padding-right: 0;
+  
+}
+ul.nav-list{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+li.nav-item a{
+  color: white;
+  text-decoration: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: block;
+}
+li.nav-item a:hover/*dictates a change in the state of an element*/{
+  background-color: var(--warm-beige);
+  color: var(--dark-brown);
+  border-radius: 5px;/*we are making the edges curved*/
+}
+/*Main styles*/
+.container{
+  max-width: 1200px;
+  /*margin: */
+  margin-top: 0 ;
+  margin-bottom: 0;
+  margin-left: auto;/*horizontally centers the element within its container*/
+  margin-right: auto;
+
+  text-align: center;
+}
+
+/*banner styles*/
+#banner{
+width: 100%;
+border-radius: 20px;/*adds curvature to the edges of the image*/
+margin: 10px 0;/*The first value represents the top and bottom margin; the second value represents the right and left value */
+}
+/*paragraph styles*/
+article p.para{
+  font-size: 18px;
+  line-height: 1.6 ;/*space between lines*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+article p.bolder{
+  font-weight: 700;/*equivalent to bold*/
+
+}
+/*offers and best styles*/
+
+#offers, #best{
+  width: 44%;
+  margin: 1%;
+  background-color: var(--light-gray);
+  padding: 10px;
+  border-radius: 10px;/*curves the edges of the background*/
+}
+
+#offers ul, #best ol{
+  list-style: none;/*removes the bullet*/
+  text-align: left;/*shifts the texxt to the left*/
+}
+/*floating*/
+#offers{
+  float: left;/*default*/
+}
+
+#best{
+  float:right;
+}
+
+/*featured products*/
+#featured-products{
+  background-color: var(--light-gray);
+  padding: 20px 0;
+  margin-top: 40px;
+  clear: both;
+}
+
+.products-container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;/*content will be distributed evenly in  the container*/
+
+}
+
+.product-box{
+  background-color: white;
+  width: 270px;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0,0.1);/*adds a soft subtle shadow to an element- visually lifts an element*/
+  /*rgba - the color of the shadow rgb(0,0,0) its black but with very low capacity 10% so it looks like light gray, barely noticable*/
+  
+}
+
+#product1{
+border: 2px solid var(--dark-brown);/*shorthand*/
+}
+
+#product2{
+  /*longhand*/
+  border-width: 2px;
+  border-style: dashed;
+  border-color: var(--accent-yellow);
+}
+
+#product3{
+  border-width: 2px;
+  border-style: dotted;
+  border-color: var(--soft-yellow);
+ 
+}
+
+.product-box h3{
+  margin-top: 0;
+  color: var(--dark-brown);
+}
+/*descendant selector - composed of multiple simple selectors;*/
+/*.product-box- targets any element within the class product-box*/
+/*span.price -This targets any <span class="price"> element that is nested anywhere inside an element with the class product-box.
+ */
+.product-box span.price{
+ /*CSS Positioning*/
+  font-weight: bold;
+  color: var(--dark-brown);
+}
+
+/*Gallery Styles*/
+.gallery-item img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+#gallery{
+  padding: 30px 0;
+}
+/*All the images are gallery items*/
+.gallery-grid{
+  display: grid;
+  /*define the gris columns*/
+/*Fixed widths -250px 250px 250px This grid has 3 columns each habing a width of 250px */
+ /*Relative units: grid-template-columns: 1fr 1fr 1fr; Responsive(fractol units)- each of the gallery items will occupy a similar width*/
+ /*Responsive Relative units*/
+
+ grid-template-columns: repeat(auto-fit, minmax(250px,1fr));/*columns are autofit- each column has a minimum size of 250px*/
+ 
+ gap : 20px;
+  
+}
+.gallery-item{
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0,0.1);
+  transition-duration: 1s;
+}
+
+.gallery-item:hover{
+  transform: translateY(10px);
+}
+
+footer{
+  background-color: var(--dark-brown);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  margin-top: 5px;
+}
+footer a{
+  color: var(--accent-yellow);
+  text-decoration: none;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+
+/*Contact CSS*/
+.form-section {
+  background-color: var(--light-gray);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+ 
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--dark-brown);
+}
+ 
+label > span {
+  color: red;
+}
+ 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--warm-beige);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+ 
+input[type="submit"] {
+  background-color: var(--dark-brown);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+ 
+button[type="button"] {
+  background-color: var(--medium-gray);
+}
+ 
+#food-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+ 
+.servings-input {
+  display: none;
+  margin-top: 5px;
+}
+ 
+.servings-input>label {
+  font-size: 14px;
+}
+ 
+input[type="number"] {
+  width: 7%;
+  padding: 5px;
+  border: 2px solid var(--warm-beige);
+  border-radius: 8px;
+  font-size: 16px;
+}
+ 
+#orderTotal {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--soft-yellow);
+  border-radius: 5px;
+  display: none;
+}
+ 
+.payment-options {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+ 
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--dark-brown);
+}
+ 
+.error {
+  border-color: red !important;
+}
+ 
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+ 
+.success-message {
+  color: green;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+ 
+button {
+  background-color: var(--dark-brown);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 5px;
+}
+ 
+button:hover {
+  background-color: var(--warm-beige);
+  color: var(--dark-brown);
+}
+ 
